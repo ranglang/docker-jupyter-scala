@@ -1,4 +1,4 @@
-IMAGE := fikovnik/jupyter-scala-211
+IMAGE := fikovnik/jupyter-scala
 CONTAINER := jupyter
 
 .PHONY: build
