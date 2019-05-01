@@ -1,4 +1,5 @@
-FROM jupyter/r-notebook
+ARG BASE_CONTAINER=jupyter/minimal-notebook
+FROM $BASE_CONTAINER
 
 LABEL maintainer="Filip Krikava <krikava@gmail.com>"
 
@@ -18,5 +19,7 @@ RUN /coursier bootstrap \
     -o almond
 
 RUN ./almond --install
+
+USER $NB_UID
 
 RUN jupyter kernelspec list
