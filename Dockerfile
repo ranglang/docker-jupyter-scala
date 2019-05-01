@@ -5,6 +5,10 @@ LABEL maintainer="Filip Krikava <krikava@gmail.com>"
 
 USER root
 
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    curl
+
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y update && apt-get install -qy openjdk-8-jdk-headless
 
 RUN curl -L -o /coursier https://git.io/coursier && \
